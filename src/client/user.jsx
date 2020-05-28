@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 export default class User extends React.Component {
 
     render() {
-        const users = this.props.tweet.user;
-        let name = users.name;
+        const user = this.props.tweet.user;
+        let name = user.name;
         let handle = user.screen_name;
 
         return (

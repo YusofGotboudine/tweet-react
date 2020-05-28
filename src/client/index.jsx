@@ -4,18 +4,24 @@ import ReactDOM from 'react-dom';
 import tweets from 'tweets';
 import User from 'user';
 
-// const tweet = tweets;
+const tweet = tweets.tweets;
 
 class TweetList extends React.Component {
   render() {
-    let tweetElements = tweets.map((tweet, index) => {
-      return <p>{tweet.text}</p>
+    let text = tweet[0].text;
+    let name = tweet[0].user.name;
+    let handle = tweet[0].user.screen_name;
 
-    });
+    let tweets = tweet.map(tweet => {
+      return <div>
+        <User tweet={tweet}></User>
+        <div>{tweet.text}</div>
+      </div>
+    })
 
     return (
       <div>
-        {tweetElements}
+        {tweets}
       </div>
     );
   }
@@ -24,6 +30,6 @@ class TweetList extends React.Component {
 const element = document.getElementById('app');
 
 
-ReactDOM.render(<TweetList tweet={tweets} />, element);//
+ReactDOM.render(<TweetList />, element);//
 
 console.log("tweet react");

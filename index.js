@@ -20,7 +20,7 @@ app.use('/', express.static('public'));
  * =======================================================================
  */
 
-app.get('/banana', (request, response)=>{
+app.get('/banana', (request, response) => {
   response.send("ehllo");
 });
 
@@ -34,13 +34,13 @@ app.get('/react', (req, res) => {
   const myHtml = `
     <html>
       <body>
-        <h1>Wow, react</h1>
+      <h1> Twittr. </h1>
         <div id="app"></div>
         <script type="text/javascript" src="/main.js"></script>
       </body>
     </html>
   `;
-  res.send( myHtml );
+  res.send(myHtml);
 });
 
 /*
